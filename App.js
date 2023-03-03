@@ -1,19 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+
+import Nav from './Components/Nav';
+import Search from './Components/Search';
+import Category from './Components/Category';
+import Popular from './Components/Popular';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello Zain</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <Bottom/>
+    <ScrollView>
+      <Nav />
+      <Search />
+      <Text style={styles.category_head}>Food Category</Text>
+      <Category/>
+      <Popular/>
+
+    </ScrollView>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+const styles= StyleSheet.create({
+  category_head:{
+    margin:20,
+    fontSize:18,
+    fontWeight:'bold'
+  }
+})
+
