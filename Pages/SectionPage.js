@@ -33,7 +33,6 @@ export default function SectionPage() {
     ])
     const [pizzaclr, setpizzaclr] = useState([])
 
-
     return (
         <>
             <View style={styles.catogery_div}>
@@ -47,9 +46,9 @@ export default function SectionPage() {
                     renderItem={({ item }) =>
                         <TouchableOpacity style={[styles.card, { backgroundColor: pizzaclr[item.key] ? "red" : "lightgrey" }]} onPress={() => {
                             setpizzaclr(prevState => {
-                                const newState = [...prevState]; 
-                                newState[item.key] = !newState[item.key]; 
-                                return newState; 
+                                const newState = [...prevState];
+                                newState[item.key] = !newState[item.key];
+                                return newState;
                             });
                         }}>
                             <Text style={styles.card_text}>{item.title}</Text>
